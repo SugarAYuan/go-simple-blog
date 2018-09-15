@@ -1,14 +1,10 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"go-simple-blog/service"
+)
 
 func main () {
-	r := gin.Default()
-	r.GET("/" , func(context *gin.Context) {
-		context.Writer.WriteString("Hello World.")
-
-	})
-
-
-	r.Run("127.0.0.1:8081")
+	serv := service.NewServer()
+	serv.Start()
 }
